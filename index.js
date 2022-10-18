@@ -1,22 +1,13 @@
 import rl from 'readline-sync';
+import { getRndmFromSet } from './getRandom.js';
+import { spinTheWheel } from './spinthewheel.js';
 
-const setWheel = [50,60,70,80,90,100,200,300,400,500,1000,0,1];
+export const setWheel = [50,60,70,80,90,100,200,300,400,500,1000,0,1];
 
-function getRndmFromSet(set)
-{
-    let rndm = Math.floor(Math.random() * set.length);
-    return set[rndm];
-}
-
-function spinTheWheel()
-{
-    return getRndmFromSet(setWheel);
-}
-
-console.log("Welcome to Wheel of Fortune!\n");
+console.log("Welcome to the World of Gambling!\n");
 console.log("Every Spin costs $10. Please buy tickets to play the Game.\n");
-console.log("Explain the Wheel\n");
-console.log("Please enter your names!\n");
+console.log("As you play, your score will increase with your prize money\n");
+//console.log("Please enter your names!\n");
 
 const player1name = rl.question ("What is player 1's name?\n");
 
@@ -66,7 +57,7 @@ else if(player1choice=="Q")
 
 if(player1ticketbalance<=0)
 {
-    console.log("Sorry ! you went Bankrupt !You have Zero Balance. Please visit the Ticket window to play again.\n");
+    console.log("Sorry ! You went Bankrupt !You have Zero Balance. Please visit the Ticket window to play again.\n");
     player1session=false;
     break;
 }
